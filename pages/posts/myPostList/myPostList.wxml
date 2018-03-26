@@ -1,0 +1,14 @@
+<import src="../post-item/post-item-template.wxml" />
+<view style='text-align:center;'>
+  <text>我的商铺</text>
+</view>
+
+<image src="{{imgSrc}}"></image>
+
+<view class='marginT20'>
+  <block wx:key="{{index}}" wx:for="{{store}}">
+    <view catchtap='onPostTap' data-postid="{{item.postid}}">
+      <template is="postitem" data="{{...item}}" />
+    </view>
+  </block>
+</view>

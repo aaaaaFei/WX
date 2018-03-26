@@ -1,0 +1,16 @@
+<view>
+<form bindsubmit='formSubmit'>
+        <view class="weui-cells__title">请输入支付金额</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__bd">
+                    <input class="weui-input" name="pay" placeholder="请输入支付金额" />
+                </view>
+            </view>
+        </view>
+<view class="btn-area weui-footer_fixed-bottom">
+    <button class="weui-btn mini-btn" type="primary" formType="submit">提交</button>
+    <button class="weui-btn mini-btn" type="default" formType="reset">重置</button>
+  </view>
+</form>
+</view>

@@ -1,0 +1,8 @@
+<text>这里是您的商店\n</text>
+<text>{{shopname}}</text>
+<block wx:for="{{userlist}}">
+<view>
+<text>{{item.nickName}}:{{item.cost}}</text>
+</view>
+</block>
+

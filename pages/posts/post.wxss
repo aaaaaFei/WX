@@ -1,0 +1,4 @@
+/* pages/posts/post1.wxss */
+.margin0auto{
+  margin: 0 auto
+}

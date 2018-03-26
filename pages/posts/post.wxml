@@ -1,0 +1,28 @@
+<import src="post-item/post-item-template.wxml" />
+<view>
+  <swiper
+   autoplay="true"
+   indicator-dots="false"
+   indicator-color="#333"
+   indicator-active-color="#fff"
+   circular="true">
+   <block wx:for="{{imgUrls}}"  wx:key="{{index}}">
+     <swiper-item>
+      <image src="{{item}}"  class="slide-image"></image>
+    </swiper-item>
+    </block>
+  </swiper> 
+</view>
+
+<view style='text-align:center;'>
+  <text>本周销售额排行榜</text>
+</view>
+
+<view class='marginT20'>
+  <block wx:key="{{index}}" wx:for="{{store}}">
+    <view catchtap='onPostTap' data-postid="{{item.postid}}">
+      <template is="postitem" data="{{...item}}" />
+    </view>
+  </block>
+</view>
+

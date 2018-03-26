@@ -1,0 +1,40 @@
+<view class='bgF'>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+          <view class="weui-cell__bd">请上传您的商品</view>
+      </view>
+  </view>
+  <form bindsubmit='formSubmit'>
+
+
+  <view class="weui-cells__title">商品名称：</view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input class="weui-input"  name="name" placeholder="请输入商品名" />
+          </view>
+      </view>
+  </view>
+  <view class="weui-cells__title">商品价格:</view>
+  <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__bd">
+              <input class="weui-input" type='number' name="price"  placeholder="请输入商品价格" />
+          </view>
+      </view>
+  </view>
+  <view class="weui-uploader__hd">
+      <view class="weui-cells__title">请上传商品图片</view>
+  </view>
+  <view class="weui-uploader__input-box">
+      <view class="weui-uploader__input" bindtap="chooseImage"></view>
+  </view>
+  <view class='img'>
+    <image src="{{path}}" />
+  </view>
+  <view class="btn-area">
+      <button type='primary' formType="submit" >提交</button>
+      <button type='default'formType="reset">重置</button>
+    </view>
+  </form>
+</view>

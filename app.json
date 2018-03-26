@@ -1,0 +1,38 @@
+{
+  "pages": [
+    "pages/welcome/welcome",
+    "pages/store/store",
+    "pages/posts/myPostList/myPostList",
+    "pages/posts/post",
+    "pages/order/order",
+    "pages/payment/payment",
+    "pages/store/goodslist/goodslist", 
+    "pages/posts/post-detail/post-detail",
+    "pages/map/map"
+  ],
+  "tabBar":{
+    "color":"#ddd",
+    "selectedClolor":"#ccc",
+    "backgroundColor":"#fff",
+    "list":[
+      {
+        "pagePath":"pages/order/order",
+        "iconPath":"images/icon-close/car.png",
+        "selectedIconPath":"images/icon-open/car.png",
+        "text":"我的订单"
+      },
+      {
+        "pagePath": "pages/posts/post",
+        "iconPath": "images/icon-close/store.png",
+        "selectedIconPath": "images/icon-open/store.png",
+        "text": "商户"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "iconPath": "images/icon-close/my.png",
+        "selectedIconPath": "images/icon-open/my.png",
+        "text": "附近商铺"
+      }
+    ]
+  }
+}
