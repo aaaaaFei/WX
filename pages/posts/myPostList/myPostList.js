@@ -35,10 +35,21 @@ Page({
           wx.request({
             url: 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' + res.data.access_token,
             data: where,
+<<<<<<< HEAD
             method: 'POST',
             success: function (res) {
               console.log(res.data)
               that.setData({ imgSrc: 'data:image/jpeg;base64,' + res.data })
+=======
+            dataType:'json',
+            method: 'POST',
+            success: function (res) {
+              if (typeof (FileReader) === 'undefined') {
+                console.log("抱歉，你的浏览器不支持 FileReader，请使用现代浏览器操作！") ;
+              }
+              var img = encodeURI(res.data)
+              that.setData({ imgSrc: img })
+>>>>>>> f11ee459703bccf029de595432290ac6fc282d81
             }
           })
 

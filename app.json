@@ -2,6 +2,10 @@
   "pages": [
     "pages/posts/myPostList/myPostList",
     "pages/welcome/welcome",
+<<<<<<< HEAD
+=======
+    "pages/posts/myPostList/myPostList",
+>>>>>>> f11ee459703bccf029de595432290ac6fc282d81
     "pages/store/store",
     "pages/posts/post",
     "pages/order/order",
@@ -12,7 +16,7 @@
   ],
   "tabBar":{
     "color":"#ddd",
-    "selectedClolor":"#ccc",
+    "selectedClolor":"#csadgasdgasdgwqe cc",
     "backgroundColor":"#fff",
     "list":[
       {
