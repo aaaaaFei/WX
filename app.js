@@ -19,18 +19,21 @@ App({
     var that = this
     get.getOpenIdTap(that, function () {
       wx.request({
-        url: 'http://127.0.0.1/begin',
-        method: "GET",
+        url: 'https://www.greatforworld.com/begin',
+        method: "POST",
         data: {
           openid: that.globalData.openid,
         },
         success: function (response) {
           console.log(response);
           var res = response.data;
-          if (res.storeslist && res.storeslist.length != 0)
-            that.setData({ userType: 1, storeList: res.storelist });
-          else
-            that.setData({ userType: 0 });
+          if (res.storeslist && res.storeslist.length != 0){
+            that.globalData.userType = 1
+            that.globalData.storeList = res.storelist
+          }
+          else{
+            that.globalData.userType = 0
+          }
         }
       })
     })

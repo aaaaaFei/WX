@@ -3,7 +3,7 @@
   <text>我的商铺</text>
 </view>
 
-<image src="{{imgSrc}}"></image>
+<image src="data:image/jpeg;base64,{{imgSrc}}"></image>
 
 <view class='marginT20'>
   <block wx:key="{{index}}" wx:for="{{store}}">

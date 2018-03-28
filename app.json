@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/welcome/welcome",
-    "pages/store/store",
     "pages/posts/myPostList/myPostList",
+    "pages/store/store",
     "pages/posts/post",
     "pages/order/order",
     "pages/payment/payment",
@@ -12,7 +12,7 @@
   ],
   "tabBar":{
     "color":"#ddd",
-    "selectedClolor":"#ccc",
+    "selectedClolor":"#csadgasdgasdgwqe cc",
     "backgroundColor":"#fff",
     "list":[
       {
