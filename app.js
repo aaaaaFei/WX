@@ -7,8 +7,9 @@ App({
  storeList 用来记录登陆商户拥有的商店
  */
   globalData: {
-    userType: 1, 
+    userType: 0, 
     storeList:[],
+    storied:'',
     openid:'',
     session_key:''
   },
@@ -25,7 +26,6 @@ App({
           openid: that.globalData.openid,
         },
         success: function (response) {
-          console.log(response);
           var res = response.data;
           if (res.storeslist && res.storeslist.length != 0){
             that.globalData.userType = 1

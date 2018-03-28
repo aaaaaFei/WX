@@ -1,19 +1,27 @@
 var storeinfo = require("../../servicedata/storeinfo.js");
+var App = getApp()
 Page({
   data: {
-    imgUrls: [
-      '/images/timg.jpg',
-      '/images/timg1.jpg',
-      '/images/timg2.jpg'
-    ]
+    imgUrls: [],
+    store:[],
+    haveStroe:false
   },
   onLoad: function (options) {
-    console.log(storeinfo.name);
-    this.setData({
-      store: storeinfo.storelist,
-      name: storeinfo.name
-    });
-
+    var storeImg = []
+    if(App.storelist.length == 0){
+      this.setData({
+        haveStroe: true,
+        store: []
+      });
+    }else {
+      for (var i = 0; i< 3;i++){
+        storeImg.push(App.storelist[i].pic)
+      }
+      this.setData({
+        store: App.storelist,
+      });
+    }
+    
   },
   onPostTap: function (event) {
     var postid = event.currentTarget.dataset.postid;

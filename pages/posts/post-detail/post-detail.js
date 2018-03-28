@@ -1,5 +1,5 @@
-var storeinfo = require("../../../servicedata/storeinfo.js");
-var get = require("../../../model/getopenid.js")
+
+var App = getApp()
 Page({
 
   /**
@@ -9,7 +9,7 @@ Page({
     key:false,
     Total:'',
     weekTotal:'',
-    userType:0,
+    userType: App.globalData.userType,
     showModal:1,
     letNum:''
   },
@@ -18,27 +18,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var postid=options.id;
-    var postdata=storeinfo.storelist[postid];
-    var goodlist=postdata.goodslist;
-    var userslist=postdata.userslist;
-    var content = postdata.content;
-    this.setData({store:postdata,
-                  goods:goodlist,
-                  users: userslist,
-                  storeContent: content
-                  
-     });
-   console.log(goodlist);
-   if (options.userType){
-     var Total = Math.floor(Math.random() * 1000000)
-     var weekTotal = Math.floor(Math.random() * 100000)
-     this.setData({
-       Total: Total,
-       weekTotal: weekTotal,
-       userType: options.userType
-     });
-   }
+    var storeId = options.storeId;
+    wx.request({
+      url: 'https://www.greatforworld.com/getStreInfo',
+      data:{
+        storied: storeId
+      },
+      method:'GET',
+      success:function(res){
+        var res = res.data
+        if (res.code == 0){
+          this.setData({
+            store: {
+              storename: res.data.name,
+              feature: res.data.feature,
+              imagesrc: res.data.pic
+            },
+            goods: res.data.goodlist,
+            users: userslist,
+          });
+        }
+      }
+    })
+    
   
    },
   gotoorder: function () {

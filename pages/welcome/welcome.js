@@ -11,9 +11,8 @@ Page(
       })
     },
     ontapTodetil: function (event) {
-      var postid = event.currentTarget.dataset.postid;
       wx.navigateTo({
-        url: '../posts/post-detail/post-detail?id=' + postid +'&userType=1'
+        url: '../posts/myPostList/myPostList'
       })
     },
     onLoad: function () {

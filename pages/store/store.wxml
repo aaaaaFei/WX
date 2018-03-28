@@ -1,6 +1,7 @@
 
 <view class="weui-article__h1">请填写商户信息</view>
-<form bindsubmit='formSubmit' bindreset='formReset'>
+<form bindsubmit='formSubmit' id='storeForm' bindreset='formReset'>
+<view class="mB100">
 <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
@@ -9,9 +10,6 @@
         <view class="weui-cell__bd">
             <input class="weui-input" name="storeName" placeholder="请输入商店名"/>
         </view>
-        <!-- <view class="weui-cell__ft">
-            <icon type="warn" size="23" color="#E64340"></icon>
-        </view> -->
     </view>
 </view>
 
@@ -23,9 +21,6 @@
         <view class="weui-cell__bd">
             <input class="weui-input" name="storeAddress" placeholder="请输入商店地址"/>
         </view>
-        <!-- <view class="weui-cell__ft">
-            <icon type="warn" size="23" color="#E64340"></icon>
-        </view> -->
     </view>
 </view>
 <view class="weui-cells weui-cells_after-title">
@@ -34,24 +29,57 @@
             <view class="weui-label">电话：</view>
         </view>
         <view class="weui-cell__bd">
-            <input class="weui-input" name="tel" placeholder="请输入电话"/>
+            <input class="weui-input" name="phone" placeholder="请输入电话"/>
         </view>
-        <!-- <view class="weui-cell__ft">
-            <icon type="warn" size="23" color="#E64340"></icon>
-        </view> -->
     </view>
 </view>
-<view class="weui-cells__title">商店特色：</view>
-        <view class="weui-cells weui-cells_after-title">
-            <view class="weui-cell">
-                <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" name="storeFeature" style="height: 3.3em" />
-                    <view class="weui-textarea-counter">0/200</view>
-                </view>
-            </view>
+
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">银行卡号：</view>
         </view>
+        <view class="section">
+          <input type="digit" class='weui-input' name="bankId" placeholder="请输入银行卡号"/>
+        </view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">邮箱：</view>
+        </view>
+        <view class="section">
+          <input type="digit" class='weui-input' name="mail" placeholder="请输入邮箱"/>
+        </view>
+    </view>
+</view>
+
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-uploader__hd">
+            <view class="weui-cells__title">请上传商品图片</view>
+        </view>
+        <view class="weui-uploader__input-box">
+            <input class="weui-uploader__input" bindtap="chooseImage" name="imgFile"></input>
+             <view class='img'>
+                <image src="{{path}}" />
+              </view>
+        </view>
+      </view>
+</view>
+<view class="weui-cells__title">商店特色：</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell">
+        <view class="weui-cell__bd">
+            <textarea class="weui-textarea" name="storeFeature" style="height: 3.3em" />
+            <view class="weui-textarea-counter">0/200</view>
+        </view>
+    </view>
+</view>
+</view>
 <view class="weui-footer weui-footer_fixed-bottom" >
-    <button class="weui-btn mini-btn" type="primary"  formType="submit">提交</button>
-    <button class="weui-btn mini-btn" type="default" formType="reset">重置</button>
+    <button class=" mini-btn" type="primary"  formType="submit">提交</button>
+    <button class=" mini-btn" type="default" formType="reset">重置</button>
   </view>
 </form>

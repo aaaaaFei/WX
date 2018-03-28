@@ -1,22 +1,19 @@
 {
   "pages": [
-    "pages/posts/myPostList/myPostList",
-    "pages/welcome/welcome",
-<<<<<<< HEAD
-=======
-    "pages/posts/myPostList/myPostList",
->>>>>>> f11ee459703bccf029de595432290ac6fc282d81
     "pages/store/store",
+    "pages/store/goodslist/goodslist",
+    
+    "pages/posts/post-detail/post-detail",
+    "pages/welcome/welcome",
+    "pages/posts/myPostList/myPostList",
     "pages/posts/post",
     "pages/order/order",
     "pages/payment/payment",
-    "pages/store/goodslist/goodslist", 
-    "pages/posts/post-detail/post-detail",
     "pages/map/map"
   ],
   "tabBar":{
     "color":"#ddd",
-    "selectedClolor":"#csadgasdgasdgwqe cc",
+    "selectedClolor":"#ccc",
     "backgroundColor":"#fff",
     "list":[
       {

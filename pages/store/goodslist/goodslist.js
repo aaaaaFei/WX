@@ -1,7 +1,70 @@
+var App = getApp()
 Page({
   formSubmit: function(event)
   {
-  
+    var info = event.detail.value;
+    var that = this;
+    if (!that.data.path) {
+      wx.showToast({
+        title: '请上传图片',
+        icon: 'loading',
+        duration: 1000,
+        mask: true
+      })
+      return
+    }
+    wx.uploadFile({
+      url: 'https://www.greatforworld.com/common/upload',
+      method: 'POST',
+      filePath: that.data.path,
+      name: 'files',
+      success: function (res) {
+        var data = JSON.parse(res.data)
+        var imgID = data.data[0].id
+        wx.request({
+          url: 'https://www.greatforworld.com/addGodds',
+          method: "POST",
+          data: {
+            storied: App.globalData.storied,
+            name: info.name,
+            id: imgID,
+            price: info.price
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded',
+            'Accept': 'application/json'
+          },
+          success: function (res) {
+            console.log(typeof (res.data))
+            if (res.data.code == 0) {
+              wx.showToast({
+                title: '添加成功',
+                icon: 'success',
+                duration: 1000,
+                mask: true,
+                success: function () {
+                  wx.redirectTo({
+                    url: '../../posts/post-detail/post-detail?storeId=' + App.globalData.storied,
+                  })
+                }
+              })
+
+            } else {
+              wx.showToast({
+                title: res.data.errmsg,
+                icon: 'loading',
+                duration: 1000,
+                mask: true
+              })
+            }
+          },
+          fail:function(err){
+            debugger
+          }
+
+        })
+      }
+    })
   },
   chooseImage: function () {
     var that=this;
