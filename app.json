@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/posts/myPostList/myPostList",
     "pages/welcome/welcome",
     "pages/store/store",
-    "pages/posts/myPostList/myPostList",
     "pages/posts/post",
     "pages/order/order",
     "pages/payment/payment",

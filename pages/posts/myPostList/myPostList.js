@@ -25,21 +25,22 @@ Page({
       success: function (res) {
         if (res.data && res.data.access_token) {
           // var b = new Base64(); 
-          var math = Math.random()
-          var img = 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' + res.data.access_token + '&scene=123451&width=430&_r=' + math
-          that.setData({ imgSrc: img })
-          // var where = {
-          //   scene: '123451',
-          //   width: 430
-          // }
-          // wx.request({
-          //   url: 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' + res.data.access_token,
-          //   data: where,
-          //   method: 'POST',
-          //   success: function (res) {
-          //     that.setData({ imgSrc: b.encode(res.data) })
-          //   }
-          // })
+          // var math = Math.random()
+          // var img = 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' + res.data.access_token + '&scene=123451&width=430&_r=' + math
+          // that.setData({ imgSrc: img })
+          var where = {
+            scene: '123451',
+            width: 430
+          }
+          wx.request({
+            url: 'https://api.weixin.qq.com/wxa/getwxacodeunlimit?access_token=' + res.data.access_token,
+            data: where,
+            method: 'POST',
+            success: function (res) {
+              console.log(res.data)
+              that.setData({ imgSrc: 'data:image/jpeg;base64,' + res.data })
+            }
+          })
 
         }
       }
