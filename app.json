@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/welcome/welcome",
-    "pages/store/store",
+    "pages/store/code/code",
     "pages/posts/post-detail/post-detail",
-    "pages/store/goodslist/goodslist",
-    
     "pages/posts/myPostList/myPostList",
     "pages/posts/post",
+    "pages/store/store",
+    "pages/welcome/welcome",
+    "pages/store/goodslist/goodslist",
     "pages/order/order",
     "pages/payment/payment",
     "pages/map/map"

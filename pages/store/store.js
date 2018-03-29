@@ -51,7 +51,7 @@ Page({
                   mask:true,
                   success:function(){
                     wx.redirectTo({
-                      url: './goodslist/goodslist',
+                      url: './code/code?storeId=' + App.globalData.storied,
                     })
                   }
                 })
