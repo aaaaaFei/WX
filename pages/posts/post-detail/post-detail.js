@@ -9,7 +9,7 @@ Page({
     key:false,
     Total:'',
     weekTotal:'',
-    userType: App.globalData.userType,
+    userType: 1,
     showModal:1,
     letNum:''
   },
@@ -18,6 +18,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this
     var storeId = options.storeId;
     wx.request({
       url: 'https://www.greatforworld.com/getStreInfo',
@@ -28,14 +29,15 @@ Page({
       success:function(res){
         var res = res.data
         if (res.code == 0){
-          this.setData({
+          that.setData({
             store: {
               storename: res.data.name,
               feature: res.data.feature,
               imagesrc: res.data.pic
             },
             goods: res.data.goodlist,
-            users: userslist,
+            users: res.data.consumerqueue,
+            Total:res.data.sum
           });
         }
       }

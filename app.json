@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/posts/post-detail/post-detail",
     "pages/store/store",
     "pages/store/goodslist/goodslist",
     
-    "pages/posts/post-detail/post-detail",
     "pages/welcome/welcome",
     "pages/posts/myPostList/myPostList",
     "pages/posts/post",

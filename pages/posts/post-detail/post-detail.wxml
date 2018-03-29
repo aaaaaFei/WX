@@ -1,16 +1,10 @@
-<view class="container">
+<view class='container'>
   <view style='width:100%'>
   <view wx:if="{{userType}}">
     <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell">
             <view class="weui-cell__bd">销售总额</view>
             <view class="weui-cell__ft">{{Total}}</view>
-        </view>
-    </view>
-    <view class="weui-cells weui-cells_after-title">
-        <view class="weui-cell">
-            <view class="weui-cell__bd">本周消费额</view>
-            <view class="weui-cell__ft">{{weekTotal}}</view>
         </view>
     </view>
     <button class="weui-btn" type="primary" catchtap='add' plain="true">添加新菜品</button>
@@ -32,11 +26,11 @@
     <view class="weui-panel__bd">
           <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
               <view class="weui-media-box__hd weui-media-box__hd_in-appmsg imgLeft">
-                  <image class="weui-media-box__thumb" src="{{item.goodimage}}" />
+                  <image class="weui-media-box__thumb" src="{{item.src}}" />
               </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                  <view class="weui-media-box__title">商品名:{{item.goodname}}</view>
-                  <view class="weui-media-box__desc">价格：{{item.goodprice}}</view>
+                  <view class="weui-media-box__title">商品名:{{item.name}}</view>
+                  <view class="weui-media-box__desc">价格：{{item.price}}</view>
               </view>
               
           </navigator>
