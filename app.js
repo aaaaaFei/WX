@@ -19,23 +19,7 @@ App({
   onLaunch: function () {
     var that = this
     get.getOpenIdTap(that, function () {
-      wx.request({
-        url: 'https://www.greatforworld.com/begin',
-        method: "POST",
-        data: {
-          openid: that.globalData.openid,
-        },
-        success: function (response) {
-          var res = response.data;
-          if (res.storeslist && res.storeslist.length != 0){
-            that.globalData.userType = 1
-            that.globalData.storeList = res.storelist
-          }
-          else{
-            that.globalData.userType = 0
-          }
-        }
-      })
+      console.log(that.globalData.openid)
     })
   },
 

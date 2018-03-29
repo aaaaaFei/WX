@@ -19,7 +19,7 @@
 </view>
 <view class='marginT20'>
   <block wx:key="{{index}}" wx:for="{{store}}">
-    <view catchtap='onPostTap' data-postid="{{item.postid}}">
+    <view catchtap='onPostTap' data-postid="{{item.storied}}">
       <template is="postitem" data="{{...item}}" />
     </view>
   </block>

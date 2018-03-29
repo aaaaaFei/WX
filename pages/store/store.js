@@ -28,9 +28,11 @@ Page({
               openid: App.globalData.openid,
               name: info.storeName,
               address: info.storeAddress,
-              phone: info.phone,
+              tel: info.phone,
               feature: info.feature,
               bankId: info.bankId,
+              bankName: info.bankName,
+              bindBankName: info.bindBankName,
               pic: imgID,
               mail: info.mail
             },
@@ -41,7 +43,7 @@ Page({
             success:function(res){
               console.log(typeof (res.data))
               if (res.data.code == 0){
-                App.globalData.storied = res.data.storied
+                App.globalData.storied = res.data.data.storied
                 wx.showToast({
                   title: '申请成功',
                   icon: 'success',

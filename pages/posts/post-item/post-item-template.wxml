@@ -7,8 +7,8 @@
             <image class="weui-media-box__thumb" src="{{imagesrc}}" />
         </view>
         <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-            <view class="weui-media-box__title">{{storename}}</view>
-            <view class="weui-media-box__desc">{{content}}</view>
+            <view class="weui-media-box__title">{{name}}</view>
+            <view class="weui-media-box__desc">{{feature}}</view>
         </view>
     </navigator>
 </view>

@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/posts/post-detail/post-detail",
+    "pages/welcome/welcome",
     "pages/store/store",
+    "pages/posts/post-detail/post-detail",
     "pages/store/goodslist/goodslist",
     
-    "pages/welcome/welcome",
     "pages/posts/myPostList/myPostList",
     "pages/posts/post",
     "pages/order/order",

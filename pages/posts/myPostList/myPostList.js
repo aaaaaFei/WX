@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    store: App.globalData.storeList
+    storeList: App.globalData.storeList
   },
 
   /**
@@ -14,6 +14,9 @@ Page({
    */
   onLoad: function (options) {
     var that = this
+    that.setData({
+      storeList: App.globalData.storeList
+    })
     wx.request({
       url: 'https://api.weixin.qq.com/cgi-bin/token',
       data: {
@@ -43,7 +46,13 @@ Page({
       }
     })
   },
-
+  onPostTap:function(e){
+    var storeId = e.currentTarget.dataset.postid
+    App.globalData.storied = storeId
+    wx.navigateTo({
+      url: '../post-detail/post-detail?storeId=' + storeId,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

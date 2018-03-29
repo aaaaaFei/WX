@@ -7,20 +7,19 @@ Page({
     haveStroe:false
   },
   onLoad: function (options) {
+    var that = this
     var storeImg = []
-    if(App.storelist.length == 0){
-      this.setData({
-        haveStroe: true,
-        store: []
-      });
-    }else {
-      for (var i = 0; i< 3;i++){
-        storeImg.push(App.storelist[i].pic)
+    wx.request({
+      url: 'https://www.greatforworld.com/ranking',
+      method:'GET',
+      success:function(res){
+        if(res.data.code == 0){
+          that.setData({
+            store:res.data.data
+          })
+        }
       }
-      this.setData({
-        store: App.storelist,
-      });
-    }
+    })
     
   },
   onPostTap: function (event) {

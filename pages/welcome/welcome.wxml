@@ -4,7 +4,7 @@
 <view class="moto-container" bindtap='ontap'>
   <text class="moto">开启小程序之旅</text>
 </view>
-<view hidden="{{userType}}" class="moto-container" style='margin-top:10px' bindtap='ontapTodetil'>
+<view wx:if="{{userType}}" class="moto-container" style='margin-top:10px' bindtap='ontapTodetil'>
   <text class="moto">查看我的商店</text>
 </view>
 </view>

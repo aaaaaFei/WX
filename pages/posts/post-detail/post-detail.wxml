@@ -26,7 +26,7 @@
     <view class="weui-panel__bd">
           <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
               <view class="weui-media-box__hd weui-media-box__hd_in-appmsg imgLeft">
-                  <image class="weui-media-box__thumb" src="{{item.src}}" />
+                  <image class="weui-media-box__thumb" src="{{item.pic}}" />
               </view>
           <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
                   <view class="weui-media-box__title">商品名:{{item.name}}</view>

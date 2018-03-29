@@ -11,15 +11,18 @@ Page({
     weekTotal:'',
     userType: 1,
     showModal:1,
-    letNum:''
+    letNum:'',
+    letNumOld:'',
+    srcArr:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
     var that = this
-    var storeId = options.storeId;
+    var storeId = options.id;
     wx.request({
       url: 'https://www.greatforworld.com/getStreInfo',
       data:{
@@ -33,17 +36,36 @@ Page({
             store: {
               storename: res.data.name,
               feature: res.data.feature,
-              imagesrc: res.data.pic
+              imagesrc: res.data.pic,
             },
             goods: res.data.goodlist,
             users: res.data.consumerqueue,
-            Total:res.data.sum
+            Total:res.data.sum,
+            letNum: res.data.t,
+            letNumOld: res.data.t
           });
+          for (var i = 0; i < res.data.goodlist.length; i++) {
+            that.getImg(i,res,that)
+          }
         }
       }
     })
     
   
+   },
+   
+   getImg:function(i,res,that){
+     wx.downloadFile({
+       url: 'https://www.greatforworld.com/common/downLoadFile?id=' + res.data.goodlist[i].src,
+       success: function (responce) {
+         if (responce.statusCode != 200) {
+           return
+         }
+         that.data.goods[i].pic = responce.tempFilePath
+         that.setData({ goods: that.data.goods });
+       }
+
+     })
    },
   gotoorder: function () {
     wx.navigateTo({
@@ -75,13 +97,26 @@ Page({
      })
    },
    addLet:function(){
-     this.setData({
-       showModal: 1
+     var that = this
+     wx.request({
+       url: 'https://www.greatforworld.com/modifyStoreInfo_t',
+       method:'POST',
+       data:{
+         storied:'',
+         t: that.data.letNum
+       },
+       success:function(res){
+         that.setData({
+           showModal: 1,
+           letNumOld: that.data.letNum
+         })
+       }
      })
    },
    noLet: function(){
      this.setData({
-       showModal: 1
+       showModal: 1,
+       letNum: this.data.letNumOld
      })
    }
 

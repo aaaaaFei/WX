@@ -47,6 +47,26 @@
 <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell weui-cell_input">
         <view class="weui-cell__hd">
+            <view class="weui-label">银行卡绑定的姓名：</view>
+        </view>
+        <view class="section">
+          <input type="digit" class='weui-input' name="bindBankName" placeholder="请输入银行卡绑定的姓名"/>
+        </view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">开户银行：</view>
+        </view>
+        <view class="section">
+          <input type="digit" class='weui-input' name="bankName" placeholder="请输入开户银行"/>
+        </view>
+    </view>
+</view>
+<view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
             <view class="weui-label">邮箱：</view>
         </view>
         <view class="section">
@@ -72,7 +92,7 @@
 <view class="weui-cells weui-cells_after-title">
     <view class="weui-cell">
         <view class="weui-cell__bd">
-            <textarea class="weui-textarea" name="storeFeature" style="height: 3.3em" />
+            <textarea class="weui-textarea" name="feature" style="height: 3.3em" />
             <view class="weui-textarea-counter">0/200</view>
         </view>
     </view>
